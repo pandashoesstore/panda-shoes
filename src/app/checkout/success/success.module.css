@@ -1,0 +1,13 @@
+.page { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 60px 24px; }
+.card { max-width: 520px; width: 100%; text-align: center; }
+.icon { font-size: 80px; margin-bottom: 24px; }
+.title { font-family: var(--font-display); font-size: 2.5rem; margin-bottom: 16px; }
+.sub { color: var(--mid); line-height: 1.7; margin-bottom: 32px; }
+.info { background: var(--gl); border-radius: 12px; padding: 24px; text-align: left; margin-bottom: 32px; display: flex; flex-direction: column; gap: 12px; }
+.info p { font-size: 0.9rem; line-height: 1.6; }
+.btn {
+  display: inline-block; background: var(--grn); color: #fff;
+  border-radius: 99px; padding: 14px 40px; font-weight: 700;
+  font-size: 0.9rem; transition: background 0.2s;
+}
+.btn:hover { background: var(--gd); }

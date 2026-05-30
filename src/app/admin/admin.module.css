@@ -1,0 +1,76 @@
+.adminShell { display: flex; min-height: 100vh; background: #f0f2f5; }
+.sidebar {
+  width: 240px; background: var(--blk); flex-shrink: 0;
+  display: flex; flex-direction: column; padding: 24px 0;
+  position: sticky; top: 0; height: 100vh;
+}
+.sidebarLogo { color: #7ec97a; font-size: 1rem; font-weight: 800; padding: 0 20px 24px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+.sidebarNav { display: flex; flex-direction: column; padding: 16px 0; gap: 2px; }
+.navItem {
+  color: rgba(255,255,255,0.6); font-size: 0.85rem; font-weight: 500;
+  padding: 10px 20px; transition: all 0.15s;
+}
+.navItem:hover { color: #fff; background: rgba(255,255,255,0.05); }
+.navDivider { height: 1px; background: rgba(255,255,255,0.1); margin: 12px 20px; }
+
+.adminMain { flex: 1; padding: 32px; overflow-y: auto; }
+
+/* Shared admin styles */
+.pageHeader { margin-bottom: 28px; }
+.pageTitle { font-size: 1.6rem; font-weight: 800; color: var(--blk); }
+.pageSubtitle { color: var(--mid); font-size: 0.85rem; margin-top: 4px; }
+
+.statsGrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+.statCard { background: var(--wht); border-radius: 12px; padding: 20px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+.statLabel { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mid); margin-bottom: 8px; }
+.statValue { font-size: 2rem; font-weight: 800; color: var(--blk); }
+.statGreen { color: var(--grn); }
+
+.card { background: var(--wht); border-radius: 12px; padding: 24px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); margin-bottom: 24px; }
+.cardTitle { font-size: 1rem; font-weight: 700; margin-bottom: 16px; }
+
+.table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+.table th { text-align: left; padding: 10px 12px; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--mid); border-bottom: 2px solid var(--bdr); }
+.table td { padding: 12px 12px; border-bottom: 1px solid var(--bdr); vertical-align: middle; }
+.table tr:hover td { background: var(--gry); }
+
+.badge {
+  display: inline-block; padding: 3px 10px; border-radius: 99px;
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
+}
+.badgePending { background: #fef3c7; color: #d97706; }
+.badgePaid { background: #d1fae5; color: #065f46; }
+.badgeFulfilled { background: #dbeafe; color: #1e40af; }
+.badgeCancelled { background: #fee2e2; color: #991b1b; }
+
+.actionBtn {
+  background: var(--grn); color: #fff; border: none; border-radius: 6px;
+  padding: 6px 14px; font-size: 0.75rem; font-weight: 600; cursor: pointer;
+  transition: background 0.15s;
+}
+.actionBtn:hover { background: var(--gd); }
+.actionBtnDanger { background: var(--red); }
+.actionBtnDanger:hover { background: #922b21; }
+
+.formGrid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.formGroup { display: flex; flex-direction: column; gap: 6px; }
+.formLabel { font-size: 0.78rem; font-weight: 600; color: var(--mid); }
+.formInput, .formSelect {
+  border: 1.5px solid var(--bdr); border-radius: 8px; padding: 10px 12px;
+  font-size: 0.88rem; font-family: var(--font-body); outline: none;
+  transition: border-color 0.15s;
+}
+.formInput:focus, .formSelect:focus { border-color: var(--grn); }
+.formRow { display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px; }
+.btnPrimary {
+  background: var(--grn); color: #fff; border: none; border-radius: 8px;
+  padding: 10px 24px; font-weight: 700; font-size: 0.85rem; cursor: pointer;
+}
+.btnSecondary {
+  background: var(--gry); color: var(--blk); border: none; border-radius: 8px;
+  padding: 10px 24px; font-weight: 600; font-size: 0.85rem; cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}

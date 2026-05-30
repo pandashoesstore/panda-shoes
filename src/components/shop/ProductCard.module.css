@@ -1,0 +1,48 @@
+.card {
+  background: var(--wht);
+  border: 2px solid var(--bdr);
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.25s;
+}
+.card:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.12); transform: translateY(-4px); border-color: var(--grn); }
+
+.newBadge {
+  position: absolute; top: 12px; left: 12px; z-index: 1;
+  background: var(--grn); color: #fff;
+  font-size: 0.6rem; font-weight: 900; letter-spacing: 1.5px;
+  text-transform: uppercase; padding: 4px 10px; border-radius: 99px;
+}
+.imgBox { background: var(--gry); height: 200px; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.productImg { width: 100%; height: 100%; object-fit: cover; }
+.placeholder { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; padding: 24px; }
+.brandLogoLarge { max-height: 80px; max-width: 140px; object-fit: contain; opacity: 0.7; }
+.placeholderIcon { font-size: 72px; }
+
+.body { padding: 16px; }
+.brandRow { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+.brandLogoSmall { height: 18px; width: auto; object-fit: contain; }
+.brand { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.8px; color: var(--mid); font-weight: 800; }
+.name { font-weight: 800; font-size: 0.95rem; margin: 4px 0 2px; color: var(--blk); line-height: 1.3; }
+.style { font-size: 0.75rem; color: var(--mid); margin-bottom: 8px; font-weight: 600; }
+.price { font-weight: 900; font-size: 1.1rem; color: var(--grn); margin-bottom: 12px; }
+
+.sizeLabel { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.8px; color: var(--mid); margin-bottom: 8px; }
+.sizes { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 14px; }
+.sizeBtn {
+  background: var(--gry); border: 1.5px solid transparent;
+  border-radius: 6px; padding: 5px 9px;
+  font-size: 0.72rem; font-weight: 800; color: var(--blk);
+  transition: all 0.15s; font-family: var(--font-body);
+}
+.sizeBtn:hover { border-color: var(--grn); color: var(--grn); }
+.sizeBtn.selected { background: var(--gl); border-color: var(--grn); color: var(--grn); }
+
+.addBtn {
+  width: 100%; background: var(--blk); color: #fff; border: none;
+  border-radius: 10px; padding: 12px; font-weight: 900; font-size: 0.85rem;
+  transition: all 0.2s; font-family: var(--font-body);
+}
+.addBtn:hover { background: var(--grn); }
+.addBtn.added { background: var(--grn); }
