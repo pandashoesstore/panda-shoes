@@ -120,3 +120,28 @@
   .burger { display: flex; }
   .mobileMenu { display: flex; }
 }
+
+.authLink {
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  padding: 10px 16px;
+  border-radius: 99px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+.authLink:hover { color: #fff; background: rgba(255,255,255,0.1); }
+
+.signupBtn {
+  background: #fff;
+  color: var(--blk);
+  border-radius: 99px;
+  padding: 10px 22px;
+  font-weight: 800;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  transition: all 0.2s;
+}
+.signupBtn:hover { background: var(--accent); transform: scale(1.05); }

@@ -37,8 +37,11 @@ export default function Navbar({ onCartOpen }: { onCartOpen: () => void }) {
               </Link>
             ))}
             <Link href="/shop" className={styles.navLink}>All Brands</Link>
+            <Link href="/membership" className={styles.navLink}>Membership</Link>
           </div>
           <div className={styles.right}>
+            <Link href="/login" className={styles.authLink}>Log In</Link>
+            <Link href="/signup" className={styles.signupBtn}>Sign Up</Link>
             <button className={styles.cartBtn} onClick={onCartOpen}>
               <ShoppingBag size={18} />
               Bag
@@ -58,6 +61,8 @@ export default function Navbar({ onCartOpen }: { onCartOpen: () => void }) {
             </Link>
           ))}
           <Link href="/shop" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>All Brands</Link>
+          <Link href="/login" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Log In</Link>
+          <Link href="/signup" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Sign Up</Link>
         </div>
       )}
     </>
