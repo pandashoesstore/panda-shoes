@@ -26,7 +26,11 @@ export default async function OrdersPage() {
             <tr>
               <th>Order</th>
               <th>Customer</th>
+              <th>Delivery</th>
               <th>Items</th>
+              <th>Subtotal</th>
+              <th>Tax</th>
+              <th>Tip</th>
               <th>Total</th>
               <th>Status</th>
               <th>Date</th>
@@ -45,7 +49,13 @@ export default async function OrdersPage() {
                   <div style={{ fontWeight: 600 }}>{o.customer_name}</div>
                   <div style={{ fontSize: '0.75rem', color: 'var(--mid)' }}>{o.customer_email}</div>
                 </td>
+                <td style={{ fontSize: '0.78rem' }}>
+                    {o.delivery_method === 'local' ? '🚚 Local' : o.delivery_method === 'shipping' ? '📦 Ship' : '🏪 Pickup'}
+                  </td>
                 <td>{Array.isArray(o.items) ? o.items.reduce((s: number, i: any) => s + i.qty, 0) : 0} items</td>
+                <td>${(o.subtotal || 0).toFixed(2)}</td>
+                <td style={{ fontSize: '0.82rem' }}>{o.tax_amount > 0 ? `$${o.tax_amount.toFixed(2)}` : '—'}</td>
+                <td style={{ fontSize: '0.82rem' }}>{o.tip_amount > 0 ? `$${o.tip_amount.toFixed(2)}` : '—'}</td>
                 <td style={{ fontWeight: 700 }}>${(o.total || 0).toFixed(2)}</td>
                 <td><span className={`${styles.badge} ${statusClass[o.status] || ''}`}>{o.status}</span></td>
                 <td style={{ color: 'var(--mid)', fontSize: '0.82rem' }}>{new Date(o.created_at).toLocaleDateString()}</td>

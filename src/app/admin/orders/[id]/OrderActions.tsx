@@ -3,8 +3,10 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../admin.module.css';
 
-export default function OrderActions({ orderId, currentStatus }: { orderId: string; currentStatus: string }) {
+export default function OrderActions({ orderId, currentStatus, trackingNumber: initialTracking = '' }: { orderId: string; currentStatus: string; trackingNumber?: string }) {
   const [status, setStatus] = useState(currentStatus);
+  const [tracking, setTracking] = useState(initialTracking);
+  const [trackingSaved, setTrackingSaved] = useState(false);
   const [saving, setSaving] = useState(false);
   const router = useRouter();
 

@@ -52,4 +52,6 @@ export type CartItem = {
   size: string;
   qty: number;
   image_url?: string | null;
+  gender?: 'mens' | 'womens' | 'kids' | null;
+  category?: string | null;
 };

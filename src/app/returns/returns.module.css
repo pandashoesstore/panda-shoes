@@ -1,0 +1,140 @@
+.page {
+  padding: 40px 0 80px;
+  min-height: 80vh;
+}
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.eyebrow {
+  color: #1a5c2a;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.title {
+  font-size: 38px;
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  margin-bottom: 6px;
+}
+.updated {
+  color: #888;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+.highlight {
+  background: #fff3f3;
+  border-left: 4px solid #d32f2f;
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 36px;
+}
+.highlight h2 {
+  color: #d32f2f;
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.highlight p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.section {
+  margin-bottom: 32px;
+}
+.section h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.section p {
+  color: #444;
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-top: 14px;
+}
+@media (max-width: 600px) {
+  .options { grid-template-columns: 1fr; }
+}
+.option {
+  background: #f5f9f5;
+  border: 1px solid #dde8dd;
+  border-radius: 16px;
+  padding: 24px;
+}
+.optionIcon {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.option h3 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.option p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.6;
+}
+.list {
+  margin-top: 12px;
+}
+.listItem {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: #333;
+}
+.stores {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin: 16px 0;
+}
+@media (max-width: 600px) {
+  .stores { grid-template-columns: 1fr; }
+}
+.store {
+  background: #f7f7f5;
+  border-radius: 14px;
+  padding: 20px;
+}
+.store h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+.store p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 4px;
+}
+.hours {
+  color: #888;
+  font-size: 13.5px;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 8px;
+}
+.reminder {
+  background: #1a1a1a;
+  color: #fff;
+  border-radius: 14px;
+  padding: 22px 28px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 36px;
+}

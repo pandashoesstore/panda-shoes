@@ -60,3 +60,77 @@
   .layout { grid-template-columns: 1fr; }
   .summary { position: static; }
 }
+
+.summaryLine { display: flex; justify-content: space-between; padding: 8px 0; font-size: 0.9rem; border-top: 1px solid #f0f0f0; }
+.summaryTotal { font-weight: 800; font-size: 1.1rem; border-top: 2px solid #111 !important; margin-top: 4px; }
+.discount { color: #3a7a37; font-weight: 700; }
+.promoRow { display: flex; gap: 8px; }
+.promoRow .input { flex: 1; }
+.promoBtn { background: #111; color: #fff; border: none; border-radius: 8px; padding: 0 20px; font-weight: 800; font-size: 0.82rem; cursor: pointer; text-transform: uppercase; white-space: nowrap; }
+.promoApplied { display: flex; align-items: center; justify-content: space-between; background: #f0fff0; border: 1px solid #3a7a37; border-radius: 8px; padding: 12px 14px; font-size: 0.88rem; }
+.promoRemove { background: none; border: none; color: #999; font-size: 0.8rem; cursor: pointer; text-decoration: underline; }
+.promoError { color: #c0392b; font-size: 0.82rem; margin-top: 6px; }
+.dealNote { color: #888; font-size: 0.82rem; margin: 0 0 12px; }
+.dealOptions { display: flex; flex-direction: column; gap: 10px; }
+.dealCard { border: 2px solid #e0e0e0; border-radius: 12px; padding: 14px 16px; cursor: pointer; transition: all 0.2s; }
+.dealCard:hover { border-color: #3a7a37; }
+.dealSelected { border-color: #3a7a37; background: #f0fff0; }
+.dealBadge { font-weight: 900; font-size: 1rem; color: #111; margin-bottom: 4px; }
+.dealDesc { font-size: 0.82rem; color: #666; }
+.dealSavings { font-size: 0.8rem; font-weight: 700; color: #3a7a37; margin-top: 6px; }
+.tipOptions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.tipBtn { background: #f5f5f5; border: 2px solid #e0e0e0; border-radius: 8px; padding: 10px 16px; font-weight: 800; font-size: 0.9rem; cursor: pointer; transition: all 0.2s; }
+.tipBtn:hover { border-color: #3a7a37; }
+.tipSelected { border-color: #3a7a37; background: #f0fff0; color: #3a7a37; }
+.tipCustom { width: 90px; padding: 10px 12px; border: 2px solid #e0e0e0; border-radius: 8px; font-size: 0.9rem; font-weight: 700; }
+
+.summaryLine{display:flex;justify-content:space-between;padding:8px 0;font-size:0.9rem;border-top:1px solid #f0f0f0;}
+.summaryTotal{font-weight:800;font-size:1.1rem;border-top:2px solid #111!important;margin-top:4px;}
+.discount{color:#3a7a37;font-weight:700;}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.deliveryOptions{display:flex;flex-direction:column;gap:10px;margin-bottom:16px;}
+.deliveryCard{display:flex;align-items:center;gap:14px;border:2px solid #e0e0e0;border-radius:12px;padding:14px 16px;cursor:pointer;transition:all 0.2s;position:relative;}
+.deliveryCard:hover{border-color:#3a7a37;}
+.deliverySelected{border-color:#3a7a37;background:#f0fff0;}
+.deliveryDisabled{opacity:0.5;cursor:not-allowed;}
+.deliveryIcon{font-size:1.4rem;flex-shrink:0;}
+.deliveryLabel{font-weight:800;font-size:0.95rem;color:#111;}
+.deliverySub{font-size:0.78rem;color:#888;margin-top:2px;}
+.deliveryCheck{position:absolute;right:14px;top:50%;transform:translateY(-50%);color:#3a7a37;font-weight:900;font-size:1.1rem;}
+.pickupInfo{display:flex;flex-direction:column;gap:10px;background:#f9f9f9;border-radius:10px;padding:14px 16px;}
+.pickupStore{font-size:0.86rem;line-height:1.6;color:#444;}
+.memberAlert{background:#fff8e1;border:1px solid #ffcc02;border-radius:8px;padding:12px 14px;font-size:0.85rem;color:#7a5f00;margin-top:8px;}
+.memberAlert a{color:#3a7a37;font-weight:700;}
+.shippingTiers{display:flex;flex-direction:column;gap:8px;margin-top:8px;}
+.tierCard{display:flex;align-items:center;justify-content:space-between;border:2px solid #e0e0e0;border-radius:10px;padding:12px 16px;cursor:pointer;transition:all 0.2s;}
+.tierCard:hover{border-color:#3a7a37;}
+.tierSelected{border-color:#3a7a37;background:#f0fff0;}
+.tierLabel{font-weight:700;font-size:0.9rem;color:#111;}
+.tierDays{font-size:0.76rem;color:#888;margin-top:2px;}
+.tierPrice{font-weight:800;font-size:1rem;color:#111;}
+.freeShip{color:#3a7a37;}
+.freeShipBanner{background:#f0fff0;border:1px solid #3a7a37;border-radius:8px;padding:10px 14px;font-size:0.84rem;font-weight:700;color:#3a7a37;text-align:center;margin-top:8px;}
+.promoRow{display:flex;gap:8px;}
+.promoRow .input{flex:1;}
+.promoBtn{background:#111;color:#fff;border:none;border-radius:8px;padding:0 20px;font-weight:800;font-size:0.82rem;cursor:pointer;text-transform:uppercase;white-space:nowrap;}
+.promoApplied{display:flex;align-items:center;justify-content:space-between;background:#f0fff0;border:1px solid #3a7a37;border-radius:8px;padding:12px 14px;font-size:0.88rem;}
+.promoRemove{background:none;border:none;color:#999;font-size:0.8rem;cursor:pointer;text-decoration:underline;}
+.promoError{color:#c0392b;font-size:0.82rem;margin-top:6px;}
+.dealNote{color:#888;font-size:0.82rem;margin:0 0 12px;}
+.dealOptions{display:flex;flex-direction:column;gap:10px;}
+.dealCard{border:2px solid #e0e0e0;border-radius:12px;padding:14px 16px;cursor:pointer;transition:all 0.2s;}
+.dealCard:hover{border-color:#3a7a37;}
+.dealSelected{border-color:#3a7a37;background:#f0fff0;}
+.dealBadge{font-weight:900;font-size:1rem;color:#111;margin-bottom:4px;}
+.dealDesc{font-size:0.82rem;color:#666;}
+.dealSavings{font-size:0.8rem;font-weight:700;color:#3a7a37;margin-top:6px;}
+.tipOptions{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+.tipBtn{background:#f5f5f5;border:2px solid #e0e0e0;border-radius:8px;padding:10px 16px;font-weight:800;font-size:0.9rem;cursor:pointer;transition:all 0.2s;}
+.tipBtn:hover{border-color:#3a7a37;}
+.tipSelected{border-color:#3a7a37;background:#f0fff0;color:#3a7a37;}
+.tipCustom{width:90px;padding:10px 12px;border:2px solid #e0e0e0;border-radius:8px;font-size:0.9rem;font-weight:700;}
+
+.shippingNote{font-size:0.78rem;color:#888;margin-top:10px;line-height:1.5;}
+
+.dealDisabled { opacity: 0.45; cursor: not-allowed; }
+.dealDisabled:hover { border-color: #e0e0e0 !important; }

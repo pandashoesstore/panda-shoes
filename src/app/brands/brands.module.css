@@ -1,0 +1,10 @@
+.page{padding:clamp(32px,5vw,72px) clamp(16px,4vw,52px);max-width:1400px;margin:0 auto}
+.header{text-align:center;margin-bottom:clamp(32px,4vw,56px)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#3a7a37;margin-bottom:10px}
+.title{font-size:clamp(2rem,5vw,3rem);font-weight:900;color:#111;margin:0 0 10px}
+.title em{color:#3a7a37;font-style:normal}
+.sub{color:#777;font-size:1rem;max-width:52ch;margin:0 auto;line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:32px 40px;align-items:center;justify-items:center}
+.logoWrap{display:flex;align-items:center;justify-content:center;width:100%;padding:8px 0}
+.logo{width:100%;max-height:130px;object-fit:contain}
+@media(max-width:600px){.grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:20px}}

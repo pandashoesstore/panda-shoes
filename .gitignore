@@ -8,3 +8,10 @@ dist/
 
 .vercel
 .env*.local
+
+env*.local
+*.local
+client_secret*.json
+checkout.session.completed
+*.bak
+*.new

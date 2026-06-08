@@ -145,3 +145,42 @@
   transition: all 0.2s;
 }
 .signupBtn:hover { background: var(--accent); transform: scale(1.05); }
+
+
+.logoImg {
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.userGreet {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: rgba(255,255,255,0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.logoutBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.85);
+  padding: 10px 16px;
+  border-radius: 99px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.logoutBtn:hover { color: #fff; background: rgba(255,255,255,0.1); }
