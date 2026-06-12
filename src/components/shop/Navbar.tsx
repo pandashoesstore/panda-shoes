@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import SearchBar from './SearchBar';
 import Image from 'next/image';
 import { useCart } from '@/lib/cart-context';
 import { ShoppingBag, Menu, X, LogOut, User } from 'lucide-react';
@@ -54,9 +55,9 @@ export default function Navbar({ onCartOpen }: { onCartOpen: () => void }) {
                 {g.label}
               </Link>
             ))}
-            <Link href="/shop" className={styles.navLink}>Our Collection</Link>
             <Link href="/brands" className={styles.navLink}>All Brands</Link>
             <Link href="/membership" className={styles.navLink}>Membership</Link>
+            <SearchBar />
           </div>
 
           <div className={styles.right}>
@@ -94,7 +95,7 @@ export default function Navbar({ onCartOpen }: { onCartOpen: () => void }) {
               {g.label}
             </Link>
           ))}
-          <Link href="/shop" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>Our Collection</Link>
+          <SearchBar onNavigate={() => setMobileOpen(false)} />
           <Link href="/brands" className={styles.mobileLink} onClick={() => setMobileOpen(false)}>All Brands</Link>
           {user ? (
             <>
