@@ -134,7 +134,7 @@ export default function CheckoutPage() {
   }
 
   // Items that qualify for each deal
-  const DEAL_30_KEYWORDS = ['grandma', 'slip-in', 'slip in', 'slipin', 'sandal', 'croc', 'moccasin', 'moc'];
+  const DEAL_30_KEYWORDS = ['slip-in', 'slip in', 'slipin', 'sandal', 'croc'];
   const DEAL_32_KEYWORDS = ['sandal'];
 
   function itemQualifies(item: any, deal: '2for30' | '2for32') {
@@ -324,7 +324,7 @@ export default function CheckoutPage() {
                   <h2 className={styles.sectionTitle}>🔥 Available Deals</h2>
                   <p className={styles.dealNote}>Select a deal if your cart qualifies.</p>
                   <div className={styles.dealOptions}>
-                    {([['2for30','2 for $30','Women\'s grandma sandals, slip-ins · Kids\' sandals, Crocs, moccasins'],
+                    {([['2for30','2 for $30','Women\'s slip-ins · Kids\' sandals, Crocs'],
                        ['2for32','2 for $32','Women\'s sandals']] as const).map(([id, badge, desc]) => {
                       const qualifies = dealQualifies(id);
                       return (
