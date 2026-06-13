@@ -16,12 +16,15 @@ export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
     if (q.trim().length < 2) { setResults([]); setOpen(false); return; }
     const t = setTimeout(async () => {
       const term = q.trim();
-      const { data } = await supabase
+      let query = supabase
         .from('products')
         .select('id,name,brand,style,price,gender,category')
         .eq('is_active', true)
-        .or(`name.ilike.%${term}%,brand.ilike.%${term}%,style.ilike.%${term}%`)
         .limit(8);
+      for (const w of term.split(/\s+/)) {
+        query = query.or(`name.ilike.%${w}%,brand.ilike.%${w}%,style.ilike.%${w}%`);
+      }
+      const { data } = await query;
       setResults(data || []);
       setOpen(true);
     }, 250);
@@ -39,8 +42,7 @@ export default function SearchBar({ onNavigate }: { onNavigate?: () => void }) {
   function go(r: Result) {
     setOpen(false); setQ('');
     onNavigate?.();
-    const g = ['mens', 'womens', 'kids'].includes(r.gender) ? r.gender : 'mens';
-    router.push(`/shop/${g}#cat-${r.category}`);
+    router.push(`/product/${r.id}`);
   }
 
   return (

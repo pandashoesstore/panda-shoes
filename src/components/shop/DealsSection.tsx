@@ -27,13 +27,13 @@ export default function DealsSection() {
             <div style={{padding:'18px 24px 20px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'16px'}}>
               <div>
                 <div style={{color:'rgba(255,255,255,0.4)',fontSize:'0.68rem',fontWeight:700,letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{"Women's"}</div>
-                {["Grandma Sandals","Slip-Ins"].map(item=>(
+                {["Slip-Ins"].map(item=>(
                   <div key={item} style={{display:'flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.85)',fontSize:'0.88rem',fontWeight:600,marginBottom:'7px'}}><span style={{color:'#3a7a37'}}>✓</span>{item}</div>
                 ))}
               </div>
               <div>
                 <div style={{color:'rgba(255,255,255,0.4)',fontSize:'0.68rem',fontWeight:700,letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{"Kids'"}</div>
-                {["Sandals","Crocs","Moccasins"].map(item=>(
+                {["Sandals","Crocs"].map(item=>(
                   <div key={item} style={{display:'flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.85)',fontSize:'0.88rem',fontWeight:600,marginBottom:'7px'}}><span style={{color:'#3a7a37'}}>✓</span>{item}</div>
                 ))}
               </div>

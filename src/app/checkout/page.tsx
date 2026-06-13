@@ -138,8 +138,8 @@ export default function CheckoutPage() {
   const DEAL_32_KEYWORDS = ['sandal'];
 
   function itemQualifies(item: any, deal: '2for30' | '2for32') {
+    if (item.deal) return item.deal === deal;
     const combined = ((item.name || '') + ' ' + (item.category || '') + ' ' + (item.gender || '')).toLowerCase();
-
     if (deal === '2for30') {
       return DEAL_30_KEYWORDS.some(k => combined.includes(k));
     }

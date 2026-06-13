@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart-context';
 import type { Product } from '@/lib/supabase';
 import styles from './ProductCard.module.css';
@@ -32,13 +33,14 @@ export default function ProductCard({ product }: { product: Product }) {
   const [toast, setToast] = useState(false);
   const [logoError, setLogoError] = useState(false);
   const { add } = useCart();
+  const router = useRouter();
 
   const sizes = product.sizes?.length ? product.sizes : SIZE_MAP[product.gender] || SIZE_MAP.mens;
   const brandLogo = BRAND_LOGOS[product.brand];
 
   const handleAdd = () => {
     if (!selectedSize) { alert('Please select a size first'); return; }
-    add({ productId: product.id, name: product.name, brand: product.brand, price: product.price, size: selectedSize, qty: 1, image_url: product.image_url });
+    add({ productId: product.id, name: product.name, brand: product.brand, price: product.price, size: selectedSize, qty: 1, image_url: product.image_url, gender: product.gender, category: product.category, deal: product.deal ?? null });
     setToast(true);
     setTimeout(() => setToast(false), 2000);
   };
@@ -46,7 +48,7 @@ export default function ProductCard({ product }: { product: Product }) {
   return (
     <div className={styles.card}>
       {product.is_new && <div className={styles.newBadge}>NEW</div>}
-      <div className={styles.imgBox}>
+      <div className={styles.imgBox} onClick={() => router.push(`/product/${product.id}`)} style={{ cursor: 'pointer' }}>
         {product.image_url ? (
           <img src={product.image_url} alt={product.name} className={styles.productImg} />
         ) : (
@@ -66,7 +68,7 @@ export default function ProductCard({ product }: { product: Product }) {
           )}
           <span className={styles.brand}>{product.brand}</span>
         </div>
-        <div className={styles.name}>{product.name}</div>
+        <div className={styles.name} onClick={() => router.push(`/product/${product.id}`)} style={{ cursor: 'pointer' }}>{product.name}</div>
         <div className={styles.style}>{product.style}</div>
         <div className={styles.price}>${product.price.toFixed(2)}</div>
         <div className={styles.sizeLabel}>Select Size</div>

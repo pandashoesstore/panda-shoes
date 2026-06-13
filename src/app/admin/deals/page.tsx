@@ -3,7 +3,7 @@ import { useState } from 'react';
 import styles from '../admin.module.css';
 
 const INITIAL_DEALS = [
-  { id: '2for30', active: true, badge: '2 for $30', desc: "Women's comfort sandals, slip-ins · Kids' sandals, Crocs, moccasins", price: 30 },
+  { id: '2for30', active: true, badge: '2 for $30', desc: "Women's comfort sandals, slip-ins · Kids' sandals, Crocs", price: 30 },
   { id: '2for32', active: true, badge: '2 for $32', desc: "Women's sandals", price: 32 },
 ];
 

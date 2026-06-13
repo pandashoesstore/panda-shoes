@@ -13,6 +13,7 @@ export function getAdminClient() {
 }
 
 export type Product = {
+  deal?: string | null;
   id: string;
   name: string;
   brand: string;
@@ -46,6 +47,7 @@ export type Order = {
 
 export type CartItem = {
   productId: string;
+  deal?: string | null;
   name: string;
   brand: string;
   price: number;
