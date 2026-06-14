@@ -163,6 +163,7 @@ export default function CheckoutPage() {
 
   const handleCheckout = async () => {
     if (!form.name || !form.email) { alert('Please fill in your name and email.'); return; }
+    if (!form.phone || form.phone.replace(/\D/g, '').length < 10) { alert('Please enter a valid phone number so we can reach you about your order.'); return; }
     if (delivery === 'local' && !isMember) { alert('Local delivery is for members only. Please sign up first.'); return; }
     if (delivery === 'local' && !address.line1) { alert('Please enter your delivery address.'); return; }
     if (delivery === 'shipping' && !address.line1) { alert('Please enter your shipping address.'); return; }
@@ -287,7 +288,7 @@ export default function CheckoutPage() {
                   <label className={styles.label}>Email Address *
                     <input className={styles.input} type="email" value={form.email} onChange={e => setForm({...form, email: e.target.value})} placeholder="john@example.com" />
                   </label>
-                  <label className={styles.label}>Phone (optional)
+                  <label className={styles.label}>Phone *
                     <input className={styles.input} type="tel" value={form.phone} onChange={e => setForm({...form, phone: e.target.value})} placeholder="(201) 555-0123" />
                   </label>
                 </div>
