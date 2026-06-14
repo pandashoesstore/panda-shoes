@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../admin.module.css';
+import { supabase } from '@/lib/supabase';
 
 const GENDERS = ['mens', 'womens', 'kids'];
 const CATEGORIES: Record<string, string[]> = {
@@ -13,12 +14,26 @@ const CATEGORIES: Record<string, string[]> = {
 export default function ProductForm() {
   const router = useRouter();
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [form, setForm] = useState({
     name: '', brand: '', gender: 'mens', category: 'dress',
-    style: '', price: '', is_new: false,
+    style: '', price: '', image_url: '', is_new: false,
   });
 
   const set = (key: string, val: string | boolean) => setForm((f) => ({ ...f, [key]: val }));
+
+  const handleFile = async (e: any) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    const ext = file.name.split('.').pop();
+    const path = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`;
+    const { error } = await supabase.storage.from('product-images').upload(path, file);
+    if (error) { alert('Upload failed: ' + error.message); setUploading(false); return; }
+    const { data } = supabase.storage.from('product-images').getPublicUrl(path);
+    set('image_url', data.publicUrl);
+    setUploading(false);
+  };
 
   const handleSubmit = async () => {
     if (!form.name || !form.brand || !form.price) { alert('Name, brand, and price are required'); return; }
@@ -29,7 +44,7 @@ export default function ProductForm() {
       body: JSON.stringify({ ...form, price: parseFloat(form.price) }),
     });
     if (res.ok) {
-      setForm({ name: '', brand: '', gender: 'mens', category: 'dress', style: '', price: '', is_new: false });
+      setForm({ name: '', brand: '', gender: 'mens', category: 'dress', style: '', price: '', image_url: '', is_new: false });
       router.refresh();
     } else {
       alert('Failed to add product');
@@ -67,6 +82,16 @@ export default function ProductForm() {
         <div className={styles.formGroup}>
           <label className={styles.formLabel}>Price (USD) *</label>
           <input className={styles.formInput} type="number" step="0.01" value={form.price} onChange={(e) => set('price', e.target.value)} placeholder="79.99" />
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Image URL</label>
+          <input className={styles.formInput} value={form.image_url} onChange={(e) => set('image_url', e.target.value)} placeholder="https://... (paste photo link)" />
+        </div>
+        <div className={styles.formGroup}>
+          <label className={styles.formLabel}>Or Upload Photo</label>
+          <input type="file" accept="image/*" onChange={handleFile} disabled={uploading} style={{ fontSize: 13 }} />
+          {uploading && <span style={{ fontSize: 12, color: '#888', marginLeft: 8 }}>Uploading...</span>}
+          {form.image_url && <img src={form.image_url} alt="preview" style={{ display: 'block', marginTop: 8, width: 70, height: 70, objectFit: 'cover', borderRadius: 8, border: '1px solid #eee' }} />}
         </div>
       </div>
       <div className={styles.formRow}>

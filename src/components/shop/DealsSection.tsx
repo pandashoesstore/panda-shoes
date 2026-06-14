@@ -6,7 +6,7 @@ export default function DealsSection() {
         <div style={{textAlign:'center',marginBottom:'32px'}}>
           <div style={{display:'inline-block',background:'#3a7a37',color:'#fff',fontSize:'0.7rem',fontWeight:800,letterSpacing:'2px',textTransform:'uppercase',padding:'6px 16px',borderRadius:'999px',marginBottom:'12px'}}>🔥 Limited Time</div>
           <h2 style={{color:'#fff',fontSize:'clamp(1.8rem,4vw,2.4rem)',fontWeight:900,margin:'0 0 6px',lineHeight:1}}>Hot Deals</h2>
-          <p style={{color:'rgba(255,255,255,0.5)',fontSize:'0.9rem',margin:0}}>In-store only · While supplies last</p>
+          <p style={{color:'rgba(255,255,255,0.5)',fontSize:'0.9rem',margin:0}}>Online & in-store · While supplies last</p>
         </div>
         <div style={{maxWidth:'620px',margin:'0 auto',display:'flex',flexDirection:'column',gap:'16px'}}>
           <div style={{background:'#1a1a1a',borderRadius:'16px',overflow:'hidden',border:'1px solid #333'}}>
@@ -27,13 +27,13 @@ export default function DealsSection() {
             <div style={{padding:'18px 24px 20px',display:'grid',gridTemplateColumns:'1fr 1fr',gap:'16px'}}>
               <div>
                 <div style={{color:'rgba(255,255,255,0.4)',fontSize:'0.68rem',fontWeight:700,letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{"Women's"}</div>
-                {["Slip-Ins"].map(item=>(
+                {["Comfort Shoes","Sandals","Slip-Ins"].map(item=>(
                   <div key={item} style={{display:'flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.85)',fontSize:'0.88rem',fontWeight:600,marginBottom:'7px'}}><span style={{color:'#3a7a37'}}>✓</span>{item}</div>
                 ))}
               </div>
               <div>
                 <div style={{color:'rgba(255,255,255,0.4)',fontSize:'0.68rem',fontWeight:700,letterSpacing:'1px',textTransform:'uppercase',marginBottom:'10px'}}>{"Kids'"}</div>
-                {["Sandals","Crocs"].map(item=>(
+                {["Sandals","Clogs","Shoes"].map(item=>(
                   <div key={item} style={{display:'flex',alignItems:'center',gap:'8px',color:'rgba(255,255,255,0.85)',fontSize:'0.88rem',fontWeight:600,marginBottom:'7px'}}><span style={{color:'#3a7a37'}}>✓</span>{item}</div>
                 ))}
               </div>
@@ -54,7 +54,7 @@ export default function DealsSection() {
             </div>
           </div>
         </div>
-        <p style={{textAlign:'center',color:'rgba(255,255,255,0.3)',fontSize:'0.75rem',marginTop:'20px'}}>Available in-store at both Bergenline Ave locations</p>
+        <p style={{textAlign:'center',color:'rgba(255,255,255,0.3)',fontSize:'0.75rem',marginTop:'20px'}}>Shop online or visit either Bergenline Ave location</p>
       </div>
     </section>
   );
